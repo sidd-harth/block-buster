@@ -1,0 +1,10 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: 6-demo-source-helm-bb-app
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  url: https://sidd-harth.github.io/block-buster-helm-app
+

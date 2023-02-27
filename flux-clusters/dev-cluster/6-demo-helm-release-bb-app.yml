@@ -1,0 +1,29 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: 6-demo-helm-release-bb-app
+  namespace: flux-system
+spec:
+  chart:
+    spec:
+      chart: block-buster-helm-app
+      reconcileStrategy: ChartVersion
+      sourceRef:
+        kind: HelmRepository
+        name: 6-demo-source-helm-bb-app
+  interval: 10s
+  targetNamespace: 6-demo
+  values:
+    labels:
+      app:
+        env: dev
+        name: block-buster
+        version: 7.6.0
+    namespace:
+      name: 6-demo
+    replicaCount: 1
+    service:
+      nodePort: 30006
+      type: NodePort
+
