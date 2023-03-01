@@ -1,0 +1,25 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: 8-demo-image-update-bb-app
+  namespace: flux-system
+spec:
+  git:
+    checkout:
+      ref:
+        branch: 8-demo
+    commit:
+      author:
+        email: fluxcdbot@users.noreply.github.com
+        name: fuxcdbot
+    push:
+      branch: 8-demo
+  interval: 1m40s
+  sourceRef:
+    kind: GitRepository
+    name: 8-demo-source-git-bb-app
+  update:
+    path: ./manifests
+    strategy: Setters
+
