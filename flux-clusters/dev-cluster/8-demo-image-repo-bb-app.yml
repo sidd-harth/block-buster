@@ -1,0 +1,10 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: 8-demo-image-repo-bb-app
+  namespace: flux-system
+spec:
+  image: docker.io/siddharth67/bb-app-flux-demo-killercoda
+  interval: 10s
+
