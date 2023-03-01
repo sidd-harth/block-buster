@@ -1,0 +1,13 @@
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: 8-demo-image-policy-bb-app
+  namespace: flux-system
+spec:
+  imageRepositoryRef:
+    name: 8-demo-image-repo-bb-app
+  policy:
+    semver:
+      range: 7.8.x
+
