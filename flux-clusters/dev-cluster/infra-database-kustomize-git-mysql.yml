@@ -13,3 +13,7 @@ spec:
     name: infra-source-git
   targetNamespace: database
 
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
