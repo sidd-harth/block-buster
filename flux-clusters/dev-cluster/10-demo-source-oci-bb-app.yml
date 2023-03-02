@@ -9,8 +9,6 @@ spec:
   provider: generic
   ref:
     tag: 7.10.0-f0f5090
-  secretRef:
-    name: cosign-auth
   url: oci://ghcr.io/sidd-harth/bb-app
 
   verify:
