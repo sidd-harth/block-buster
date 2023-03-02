@@ -1,0 +1,19 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: OCIRepository
+metadata:
+  name: 10-demo-source-oci-bb-app
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  provider: generic
+  ref:
+    tag: 7.10.0-f0f5090
+  secretRef:
+    name: cosign-auth
+  url: oci://ghcr.io/sidd-harth/bb-app
+
+  verify:
+    provider: cosign
+    secretRef:
+      name: cosign-pub
